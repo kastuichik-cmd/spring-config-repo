@@ -25,7 +25,7 @@ logging:
 
 notification:
   service:
-    url: http://NOTIFICATION-SERVICE/notify
+    url: http://NOTIFICATION-SERVICE/api/notify
 
 eureka:
   client:
