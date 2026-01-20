@@ -16,9 +16,9 @@ spring:
         - id: book-service-route
           uri: lb://BOOK-SERVICE
           predicates:
-            - Path=/books/**
+            - Path=/api/books/**
 
         - id: notification-service-route
           uri: lb://NOTIFICATION-SERVICE
           predicates:
-            - Path=/notifications/**
+            - Path=/api/notify/**
