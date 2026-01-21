@@ -9,24 +9,26 @@ eureka:
 spring:
   cloud:
     gateway:
-      discovery:
-        locator:
-          enabled: true
-      routes:
-        - id: book-service-route
-          uri: lb://BOOK-SERVICE
-          predicates:
-            - Path=/api/books/**
-          filters:
-            - JwtAuthenticationFilter
-        - id: notification-service-route
-          uri: lb://NOTIFICATION-SERVICE
-          predicates:
-            - Path=/api/notify/**
-        - id: auth-service
-          uri: lb://AUTH-SERVICE
-          predicates:
-            - Path=/api/auth/**
+      server:
+        webflux:
+          discovery:
+            locator:
+              enabled: true
+          routes:
+            - id: book-service-route
+              uri: lb://BOOK-SERVICE
+              predicates:
+                - Path=/api/books/**
+              filters:
+                - JwtAuthenticationFilter
+            - id: notification-service-route
+              uri: lb://NOTIFICATION-SERVICE
+              predicates:
+                - Path=/api/notify/**
+            - id: auth-service
+              uri: lb://AUTH-SERVICE
+              predicates:
+                - Path=/api/auth/**
 logging:
   level:
-    org.springframework.cloud.gateway: DEBUG
+    org.springframework.cloud.gateway: INFO
