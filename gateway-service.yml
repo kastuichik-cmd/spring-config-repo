@@ -8,9 +8,9 @@ eureka:
 
 spring:
 
-  redis:
-    host: redis
-    port: 6379
+#  redis:
+#    host: redis
+#    port: 6379
 
   cloud:
     gateway:
@@ -30,16 +30,18 @@ spring:
               uri: lb://NOTIFICATION-SERVICE
               predicates:
                 - Path=/api/notify/**
+            - id: auth-login-limit
+              uri: lb://AUTH-SERVICE
+              predicates:
+                - Path=/api/auth/login
+                - Method=POST
+              filters:
+                - LoginRateLimitFilter
             - id: auth-service
               uri: lb://AUTH-SERVICE
               predicates:
                 - Path=/api/auth/**
-              filters:
-                - name: RequestRateLimiter
-                  args:
-                    redis-rate-limiter.replenishRate: 1
-                    redis-rate-limiter.burstCapacity: 5
-                    key-resolver: "#{@userKeyResolver}"
+
 logging:
   level:
     org.springframework.cloud.gateway: INFO
