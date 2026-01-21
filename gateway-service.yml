@@ -17,7 +17,8 @@ spring:
           uri: lb://BOOK-SERVICE
           predicates:
             - Path=/api/books/**
-
+          filters:
+            - JwtAuthenticationFilter
         - id: notification-service-route
           uri: lb://NOTIFICATION-SERVICE
           predicates:
