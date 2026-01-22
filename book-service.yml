@@ -23,6 +23,10 @@ spring:
 #      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
 #      properties:
 #        spring.json.add.type.headers: true
+
+  data:
+    mongodb:
+      uri: mongodb://root:example@localhost:27017/db?authSource=admin
 level:
   org:
     hibernate:
