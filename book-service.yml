@@ -16,8 +16,9 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
+  kafka:
+    bootstrap-servers: kafka:9092
 
-logging:
   level:
     org:
       hibernate:
@@ -26,6 +27,8 @@ logging:
 notification:
   service:
     url: http://NOTIFICATION-SERVICE/api/notify
+
+
 
 eureka:
   client:
