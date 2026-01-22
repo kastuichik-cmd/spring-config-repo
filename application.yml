@@ -5,12 +5,13 @@ server:
         git:
           uri: https://github.com/kastuichik-cmd/spring-config-repo
           default-label: main
+      retry:
+        max-attempts: 6
+        initial-interval: 2000
+        multiplier: 1.5
 jwt:
   secret: ${JWT_SECRET}
   expiration-ms: 3600000
 spring:
   kafka:
     bootstrap-servers: kafka:9092
-  data:
-    mongodb:
-      uri: ${SPRING_DATA_MONGODB_URI:mongodb://root:example@mongo:27017/db?authSource=admin}
