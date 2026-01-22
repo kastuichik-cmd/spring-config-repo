@@ -11,3 +11,7 @@ jwt:
 spring:
   kafka:
     bootstrap-servers: kafka:9092
+
+logging:
+  level:
+    org.springframework.kafka.listener.DeadLetterPublishingRecoverer: DEBUG
