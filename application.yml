@@ -13,4 +13,4 @@ spring:
     bootstrap-servers: kafka:9092
   data:
     mongodb:
-      uri: mongodb://root:example@mongo:27017/db?authSource=admin
+      uri: ${SPRING_DATA_MONGODB_URI:mongodb://mongo:27017/db?authSource=admin}
