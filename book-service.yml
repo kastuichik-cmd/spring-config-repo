@@ -32,8 +32,6 @@ notification:
   service:
     url: http://NOTIFICATION-SERVICE/api/notify
 
-
-
 eureka:
   client:
     service-url:
