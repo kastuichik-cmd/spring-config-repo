@@ -13,8 +13,4 @@ spring:
     bootstrap-servers: kafka:9092
   data:
     mongodb:
-      host: mongo
-      port: 27017
-      database: db
-      username: root
-      password: example
+      uri: mongodb://root:example@mongo:27017/db?authSource=admin
