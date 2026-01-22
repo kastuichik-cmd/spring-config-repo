@@ -7,9 +7,9 @@ eureka:
       defaultZone: http://eureka-server:8761/eureka/
 
 spring:
-  kafka:
-    consumer:
-      group-id: notification-service-group
   data:
     mongodb:
       uri: mongodb://root:example@mongo:27017/db?authSource=admin
+  kafka:
+    consumer:
+      group-id: notification-service-group
