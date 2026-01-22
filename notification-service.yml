@@ -10,6 +10,3 @@ spring:
   kafka:
     consumer:
       group-id: notification-service-group
-  data:
-    mongodb:
-      uri: mongodb://root:example@localhost:27017/db?authSource=admin
