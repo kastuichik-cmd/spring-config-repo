@@ -40,4 +40,4 @@ eureka:
       defaultZone: http://eureka-server:8761/eureka
 
 book:
-  title: "Original Title"
+  title: "Original Title22"
