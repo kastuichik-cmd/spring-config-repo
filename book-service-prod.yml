@@ -34,10 +34,5 @@ notification:
   service:
     url: http://NOTIFICATION-SERVICE/api/notify
 
-eureka:
-  client:
-    service-url:
-      defaultZone: http://eureka-server:8761/eureka
-
 book:
   title: "Original Title22"
