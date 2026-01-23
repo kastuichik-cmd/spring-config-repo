@@ -38,3 +38,6 @@ eureka:
   client:
     service-url:
       defaultZone: http://eureka-server:8761/eureka
+
+book:
+  title: "Original Title"
