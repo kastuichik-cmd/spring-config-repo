@@ -12,6 +12,17 @@ spring:
   kafka:
     bootstrap-servers: kafka:9092
 
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+
 logging:
   level:
     org.springframework.kafka.listener.DeadLetterPublishingRecoverer: DEBUG
+
