@@ -50,6 +50,7 @@ resilience4j:
         slidingWindowSize: 5
         failureRateThreshold: 50
         waitDurationInOpenState: 10s
+        statusCodesToRecordAsFailure: 404, 503, 504, 500
 
 logging:
   level:
