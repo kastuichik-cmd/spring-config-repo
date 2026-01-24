@@ -37,11 +37,6 @@ spring:
                     statuses: INTERNAL_SERVER_ERROR, BAD_GATEWAY, SERVICE_UNAVAILABLE, GATEWAY_TIMEOUT
                     methods: POST, PUT, PATCH
                     exceptions: java.io.IOException
-                - name: Bulkhead
-                  args:
-                    name: bookServiceBulkhead
-                    maxConcurrentCalls: 5
-                    maxWaitDuration: 0s
                 - JwtAuthenticationFilter
             - id: notification-service-route
               uri: lb://NOTIFICATION-SERVICE
@@ -67,6 +62,13 @@ resilience4j:
         failureRateThreshold: 50
         waitDurationInOpenState: 10s
         registerHealthIndicator: true
+  thread-pool-bulkhead:
+    instances:
+      bookServiceBulkhead:
+        maxThreadPoolSize: 5
+        coreThreadPoolSize: 2
+        queueCapacity: 10
+
 
 logging:
   level:
