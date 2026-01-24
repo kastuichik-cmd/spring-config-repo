@@ -9,17 +9,13 @@ spring:
   kafka:
     bootstrap-servers: kafka:9092
 
-  zipkin:
-    base-url: http://zipkin:9411
-    enabled: true
-
 management:
   tracing:
     sampling:
       probability: 1.0
-#  zipkin:
-#    tracing:
-#      endpoint: "http://zipkin:9411/api/v2/spans"
+  zipkin:
+    tracing:
+      endpoint: "http://zipkin:9411/api/v2/spans"
   health:
     circuitbreakers:
       enabled: true
@@ -33,7 +29,11 @@ management:
     health:
       show-details: always
 
-
+micrometer:
+  tracing:
+    zipkin:
+      enabled: true
+      base-url: http://zipkin:9411/
 
 logging:
   level:
