@@ -24,6 +24,17 @@ spring:
                   args:
                     name: bookServiceCB
                     fallbackUri: forward:/fallback/books
+                - name: Retry
+                  args:
+                    retries: 3
+                    statuses: INTERNAL_SERVER_ERROR, BAD_GATEWAY, SERVICE_UNAVAILABLE, GATEWAY_TIMEOUT
+                    methods: POST, PUT, PATCH
+                    exceptions: java.io.IOException
+                - name: Bulkhead
+                  args:
+                    name: bookServiceBulkhead
+                    maxConcurrentCalls: 5
+                    maxWaitDuration: 0s
                 - JwtAuthenticationFilter
             - id: notification-service-route
               uri: lb://NOTIFICATION-SERVICE
