@@ -58,11 +58,12 @@ resilience4j:
   circuitbreaker:
     instances:
       bookServiceCB:
+        timeoutDuration: 22s
         slidingWindowSize: 5
         failureRateThreshold: 50
         waitDurationInOpenState: 10s
         registerHealthIndicator: true
-        response-timeout: 20s
+
   thread-pool-bulkhead:
     instances:
       bookServiceBulkhead:
