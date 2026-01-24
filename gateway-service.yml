@@ -41,16 +41,8 @@ spring:
               predicates:
                 - Path=/api/auth/**
 
-resilience4j:
-  circuitbreaker:
-    instances:
-      bookServiceCB:
-        slidingWindowType: COUNT_BASED
-        slidingWindowSize: 1
-        failureRateThreshold: 50
-        waitDurationInOpenState: 10s
-        registerHealthIndicator: true
-        statusCodesToRecordAsFailure: 404, 503, 504, 500
+
+
 
 logging:
   level:

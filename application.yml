@@ -26,3 +26,12 @@ logging:
   level:
     org.springframework.kafka.listener.DeadLetterPublishingRecoverer: DEBUG
 
+resilience4j:
+  circuitbreaker:
+    instances:
+      bookServiceCB:
+        slidingWindowType: COUNT_BASED
+        slidingWindowSize: 1
+        failureRateThreshold: 50
+        waitDurationInOpenState: 10s
+        registerHealthIndicator: true
