@@ -24,7 +24,7 @@ spring:
                 - name: CircuitBreaker
                   args:
                     name: bookServiceCB
-                    fallbackUri: forward:/fallback/book
+                    fallbackUri: forward:/fallback/books
             - id: notification-service-route
               uri: lb://NOTIFICATION-SERVICE
               predicates:
@@ -50,7 +50,7 @@ resilience4j:
         slidingWindowSize: 5
         failureRateThreshold: 50
         waitDurationInOpenState: 10s
-        statusCodesToRecordAsFailure: 404, 503, 504, 500
+#        statusCodesToRecordAsFailure: 404, 503, 504, 500
 
 logging:
   level:
