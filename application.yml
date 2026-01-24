@@ -32,6 +32,8 @@ management:
 logging:
   level:
     org.springframework.kafka.listener.DeadLetterPublishingRecoverer: DEBUG
+    io.micrometer: DEBUG
+    io.zipkin.reporter2: DEBUG
 
 jwt:
   secret: ${JWT_SECRET}
