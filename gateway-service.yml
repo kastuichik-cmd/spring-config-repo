@@ -41,8 +41,14 @@ spring:
               predicates:
                 - Path=/api/auth/**
 
-
-
+resilience4j:
+  circuitbreaker:
+    instances:
+      bookServiceCB:
+        slidingWindowSize: 1
+        failureRateThreshold: 50
+        waitDurationInOpenState: 10s
+        registerHealthIndicator: true
 
 logging:
   level:
