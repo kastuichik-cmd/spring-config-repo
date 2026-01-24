@@ -19,8 +19,6 @@ management:
       enabled: true
     bulkheads:
       enabled: true
-    ratelimiters:
-      enabled: true
   endpoints:
     web:
       exposure:
