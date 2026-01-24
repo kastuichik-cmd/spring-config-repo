@@ -15,6 +15,10 @@ management:
       probability: 1.0
     propagation:
       type: "B3"
+  observations:
+    key-values:
+      db:
+        system: postgresql
   zipkin:
     tracing:
       endpoint: "http://zipkin:9411/api/v2/spans"
