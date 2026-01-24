@@ -16,7 +16,9 @@ spring:
 management:
   health:
     circuitbreakers:
-      enabled: true # Это критически важно для появления секции в health
+      enabled: true
+    bulkheads:
+      enabled: true
     ratelimiters:
       enabled: true
   endpoints:
