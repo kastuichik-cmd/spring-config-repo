@@ -16,10 +16,6 @@ spring:
       probability: 1.0
   cloud:
     gateway:
-
-      httpclient:
-        response-timeout: 22s
-
       server:
         webflux:
           discovery:
@@ -66,10 +62,6 @@ resilience4j:
         failureRateThreshold: 50
         waitDurationInOpenState: 10s
         registerHealthIndicator: true
-    timelimiter:
-      instances:
-        bookServiceCB:
-          timeoutDuration: 10s
 
   thread-pool-bulkhead:
     instances:
