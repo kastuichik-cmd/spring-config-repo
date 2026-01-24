@@ -6,10 +6,6 @@ server:
           uri: https://github.com/kastuichik-cmd/spring-config-repo
           default-label: main
 
-spring:
-  zipkin:
-    base-url: http://zipkin:9411
-    enabled: true
   kafka:
     bootstrap-servers: kafka:9092
 
