@@ -37,6 +37,10 @@ spring:
                     statuses: INTERNAL_SERVER_ERROR, BAD_GATEWAY, SERVICE_UNAVAILABLE, GATEWAY_TIMEOUT
                     methods: POST, PUT, PATCH
                     exceptions: java.io.IOException
+                - name: CircuitBreaker
+                  args:
+                    name: bookServiceBulkhead
+                    fallbackUri: forward:/fallback/books
                 - JwtAuthenticationFilter
             - id: notification-service-route
               uri: lb://NOTIFICATION-SERVICE
