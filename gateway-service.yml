@@ -62,6 +62,7 @@ resilience4j:
         failureRateThreshold: 50
         waitDurationInOpenState: 10s
         registerHealthIndicator: true
+        response-timeout: 20s
   thread-pool-bulkhead:
     instances:
       bookServiceBulkhead:
