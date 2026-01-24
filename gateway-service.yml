@@ -27,6 +27,9 @@ spring:
               predicates:
                 - Path=/api/books/**
               filters:
+                - name: Bulkhead
+                  args:
+                    name: bookServiceBulkhead
                 - name: CircuitBreaker
                   args:
                     name: bookServiceCB
