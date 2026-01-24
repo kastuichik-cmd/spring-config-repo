@@ -5,7 +5,7 @@ server:
         git:
           uri: https://github.com/kastuichik-cmd/spring-config-repo
           default-label: main
-
+spring:
   kafka:
     bootstrap-servers: kafka:9092
 
