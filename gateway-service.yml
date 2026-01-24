@@ -45,7 +45,7 @@ resilience4j:
   circuitbreaker:
     instances:
       bookServiceCB:
-        slidingWindowSize: 1
+        slidingWindowSize: 5
         failureRateThreshold: 50
         waitDurationInOpenState: 10s
         registerHealthIndicator: true
