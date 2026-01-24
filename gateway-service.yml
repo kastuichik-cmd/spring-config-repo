@@ -21,6 +21,10 @@ spring:
                 - Path=/api/books/**
               filters:
                 - JwtAuthenticationFilter
+                - name: CircuitBreaker
+                  args:
+                    name: bookServiceCB
+                    fallbackUri: forward:/fallback/book
             - id: notification-service-route
               uri: lb://NOTIFICATION-SERVICE
               predicates:
@@ -36,6 +40,16 @@ spring:
               uri: lb://AUTH-SERVICE
               predicates:
                 - Path=/api/auth/**
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      bookServiceCB:
+        registerHealthIndicator: true
+        slidingWindowType: COUNT_BASED
+        slidingWindowSize: 5
+        failureRateThreshold: 50
+        waitDurationInOpenState: 10s
 
 logging:
   level:
