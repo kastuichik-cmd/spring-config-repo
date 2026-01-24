@@ -5,15 +5,18 @@ server:
         git:
           uri: https://github.com/kastuichik-cmd/spring-config-repo
           default-label: main
-jwt:
-  secret: ${JWT_SECRET}
-  expiration-ms: 3600000
+
 spring:
+  zipkin:
+    base-url: http://zipkin:9411
+    enabled: true
   kafka:
     bootstrap-servers: kafka:9092
 
-
 management:
+  tracing:
+    sampling:
+      probability: 1.0
   health:
     circuitbreakers:
       enabled: true
@@ -30,3 +33,7 @@ management:
 logging:
   level:
     org.springframework.kafka.listener.DeadLetterPublishingRecoverer: DEBUG
+
+jwt:
+  secret: ${JWT_SECRET}
+  expiration-ms: 3600000
