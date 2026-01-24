@@ -29,12 +29,6 @@ management:
     health:
       show-details: always
 
-micrometer:
-  tracing:
-    zipkin:
-      enabled: true
-      base-url: http://zipkin:9411/
-
 logging:
   level:
     org.springframework.kafka.listener.DeadLetterPublishingRecoverer: DEBUG
