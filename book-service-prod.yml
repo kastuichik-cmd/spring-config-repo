@@ -43,15 +43,14 @@ eureka:
 book:
   title: "Original Title22"
 
-resilience4j:
-  circuitbreaker:
-    instances:
-      notificationService:
-        failureRateThreshold: 50
-        slidingWindowSize: 5
-        minimumNumberOfCalls: 5
-        waitDurationInOpenState: 10s
-        registerHealthIndicator: true
+resilience4j.circuitbreaker:
+  instances:
+    notificationService:
+      failureRateThreshold: 50
+      slidingWindowSize: 5
+      minimumNumberOfCalls: 5
+      waitDurationInOpenState: 10s
+      registerHealthIndicator: true
 
 logging:
   level:
