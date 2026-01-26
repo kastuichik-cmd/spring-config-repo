@@ -56,7 +56,7 @@ resilience4j:
     instances:
       notificationService:
         maxAttempts: 3
-        waitDuration: 1s
+
 
 logging:
   level:
