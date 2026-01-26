@@ -38,12 +38,12 @@ management:
     health:
       show-details: always
 
-logging:
-  level:
-    org.springframework.kafka.listener.DeadLetterPublishingRecoverer: DEBUG
-    io.micrometer: DEBUG
-    io.zipkin.reporter2: DEBUG
-    org.springframework.web.client.RestTemplate: DEBUG
+#logging:
+#  level:
+#    org.springframework.kafka.listener.DeadLetterPublishingRecoverer: DEBUG
+#    io.micrometer: DEBUG
+#    io.zipkin.reporter2: DEBUG
+#    org.springframework.web.client.RestTemplate: DEBUG
 
 jwt:
   secret: ${JWT_SECRET}

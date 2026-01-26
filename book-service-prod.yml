@@ -26,10 +26,10 @@ spring:
   cache:
     type: redis
 
-level:
-  org:
-    hibernate:
-      SQL: DEBUG
+#level:
+#  org:
+#    hibernate:
+#      SQL: DEBUG
 
 notification:
   service:
@@ -51,3 +51,8 @@ resilience4j:
         slidingWindowSize: 5
         minimumNumberOfCalls: 5
         waitDurationInOpenState: 10s
+        registerHealthIndicator: true
+
+logging:
+  level:
+    io.github.resilience4j: DEBUG
