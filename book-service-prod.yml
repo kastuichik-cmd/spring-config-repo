@@ -45,7 +45,6 @@ book:
 
 resilience4j:
   circuitbreaker:
-    circuit-breaker-aspect-order: 2
     instances:
       notificationService:
         failureRateThreshold: 50
@@ -54,7 +53,6 @@ resilience4j:
         waitDurationInOpenState: 10s
         registerHealthIndicator: true
   retry:
-    retry-aspect-order: 1
     instances:
       notificationService:
         maxAttempts: 3
