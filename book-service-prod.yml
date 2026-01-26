@@ -56,6 +56,12 @@ resilience4j:
     instances:
       notificationService:
         maxAttempts: 3
+  ratelimiter:
+    instances:
+      notificationService:
+        limitForPeriod: 10
+        limitRefreshPeriod: 1s
+        timeoutDuration: 0s
 
 
 logging:
