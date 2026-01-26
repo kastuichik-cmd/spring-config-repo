@@ -26,18 +26,18 @@ spring:
               uri: lb://BOOK-SERVICE
               predicates:
                 - Path=/api/books/**
-              filters:
-                - name: CircuitBreaker
-                  args:
-                    name: bookServiceCB
-                    fallbackUri: forward:/fallback/books
-                - name: Retry
-                  args:
-                    retries: 3
-                    statuses: INTERNAL_SERVER_ERROR, BAD_GATEWAY, SERVICE_UNAVAILABLE, GATEWAY_TIMEOUT
-                    methods: POST, PUT, PATCH
-                    exceptions: java.io.IOException
-                - JwtAuthenticationFilter
+#              filters:
+#                - name: CircuitBreaker
+#                  args:
+#                    name: bookServiceCB
+#                    fallbackUri: forward:/fallback/books
+#                - name: Retry
+#                  args:
+#                    retries: 3
+#                    statuses: INTERNAL_SERVER_ERROR, BAD_GATEWAY, SERVICE_UNAVAILABLE, GATEWAY_TIMEOUT
+#                    methods: POST, PUT, PATCH
+#                    exceptions: java.io.IOException
+#                - JwtAuthenticationFilter
             - id: notification-service-route
               uri: lb://NOTIFICATION-SERVICE
               predicates:
