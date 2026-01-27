@@ -8,6 +8,9 @@ server:
 spring:
   kafka:
     bootstrap-servers: kafka:9092
+  flyway:
+    default-schema: public
+    schemas: public
 
 management:
   metrics:
@@ -37,13 +40,6 @@ management:
       enabled: true
     health:
       show-details: always
-
-#logging:
-#  level:
-#    org.springframework.kafka.listener.DeadLetterPublishingRecoverer: DEBUG
-#    io.micrometer: DEBUG
-#    io.zipkin.reporter2: DEBUG
-#    org.springframework.web.client.RestTemplate: DEBUG
 
 jwt:
   secret: ${JWT_SECRET}
